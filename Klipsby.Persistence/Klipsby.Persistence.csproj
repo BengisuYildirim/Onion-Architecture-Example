@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Klipsby.Application\Klipsby.Application.csproj" />
     <ProjectReference Include="..\Klipsby.Domain\Klipsby.Domain.csproj" />
   </ItemGroup>
 
