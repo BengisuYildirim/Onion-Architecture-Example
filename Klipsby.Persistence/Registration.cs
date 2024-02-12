@@ -1,14 +1,11 @@
 ﻿using Klipsby.Application.Interfaces.Repositories;
+using Klipsby.Application.Interfaces.UnitOfWorks;
 using Klipsby.Persistence.Context;
 using Klipsby.Persistence.Repositories;
+using Klipsby.Persistence.UnitOfWorks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Klipsby.Persistence
 {
@@ -21,6 +18,8 @@ namespace Klipsby.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }
