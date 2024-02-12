@@ -11,9 +11,9 @@ namespace Klipsby.Persistence.Repositories
     {
         private readonly DbContext dbContext;
 
-        public ReadRepository(DbContext dbContext)
+        public ReadRepository(DbContext _klipsbyDbContext)
         {
-            this.dbContext = dbContext;   
+            this.dbContext = _klipsbyDbContext;   
         }
 
         private DbSet<T> Table { get => dbContext.Set<T>(); }

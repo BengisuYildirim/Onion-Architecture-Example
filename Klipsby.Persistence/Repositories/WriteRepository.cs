@@ -13,9 +13,9 @@ namespace Klipsby.Persistence.Repositories
     public class WriteRepository<T> : IWriteRepository<T> where T : class, IEntityBase, new()
     {
         private readonly DbContext dbContext;
-        public WriteRepository(DbContext _dbContext)
+        public WriteRepository(DbContext _klipsbyDbContext)
         {
-            this.dbContext = _dbContext;
+            this.dbContext = _klipsbyDbContext;
         }
 
         private DbSet<T> _dbSet { get => dbContext.Set<T>(); }
